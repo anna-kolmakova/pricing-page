@@ -1,0 +1,69 @@
+ul.checkmark li {
+  list-style-type: none;
+  font-size: 16px; // this determines the size of the list text and therefore checkmark size
+  list-style-type: none; // remove default list style
+  margin-bottom: 11px; // lists need to be able to breathe
+  padding: 0.25em 0 0 2.25em; // make room for the circle
+  position: relative; // because we want to position the circle in an absolute fashion
+}
+
+ul.checkmark li:before {
+  content: " "; // the circle itself is empty
+  display: block;
+  border: solid 0.8em rgba(82, 67, 194, 0.15);; // create a colored area...
+  border-radius: .8em; // ... and turn it into a circle
+  height: 0;
+  width: 0;
+  position: absolute; // the circle is then put into place
+  left: 0;
+  top: 40%;
+  margin-top: -0.5em;
+
+}
+
+ul.checkmark--popular li:before {
+  border: solid 0.8em rgba(255, 255, 255, 0.15);
+}
+
+
+ul.checkmark li:after {
+  content: " ";
+  display: block;
+  width: 0.3em; // the short bar of the mark is half as long as the long bar
+  height: 0.6em;
+  border: solid $c-white;
+  border-width: 0 0.2em 0.2em 0; // creates the inverted "L" shape
+  position: absolute;
+  left: 0.5em;
+  top: 40%;
+  margin-top: -0.2em;
+  -webkit-transform: rotate(45deg); // tilts the shape
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+ul.checkmark li:after {
+  content: " ";
+  display: block;
+  width: 0.3em; // the short bar of the mark is half as long as the long bar
+  height: 0.6em;
+  border: solid $c-white;
+  border-width: 0 0.2em 0.2em 0; // creates the inverted "L" shape
+  position: absolute;
+
+  top: 40%;
+  margin-top: -0.2em;
+  -webkit-transform: rotate(45deg); // tilts the shape
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+ul.checkmark--popular {
+  @include onDesktop {
+    margin-bottom: 85px;
+  }
+}
+
+

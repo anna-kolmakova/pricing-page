@@ -1,0 +1,72 @@
+.button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 124px;
+  height: 38px;
+  background: $main-light;
+  border-radius: 25px;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  @include onTablet {
+    display: flex;
+  }
+
+  &:hover {
+    background: $main-light-hover;
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.plan__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $main-dark;
+  border-radius: 24px;
+  width: 232px;
+  height: 44px;
+  margin: 27px auto 20px;
+
+  @include onDesktop {
+    position: absolute;
+    bottom: 20px;
+    width: 207px;
+  }
+
+  &:hover {
+    background: $main-light-hover;
+    cursor: pointer;
+  }
+
+  &--popular {
+    background: $main-light;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0px;
+      width: 232px;
+      height: 44px;
+    }
+  }
+}
+
+.plan__button-link {
+  text-decoration: none;
+  color: $c-white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+}
+

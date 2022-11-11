@@ -4,3 +4,150 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin flexSettings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin autoMargin {
+  margin: 0 auto;
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) and (max-width: 3000px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 400px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin can-toggle-branding(
+  $main-color: #FFFFFF,
+  $dark-color: #3B3472,
+  $toggle-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000),
+) {
+
+  input[type="checkbox"] {
+
+    &:hover ~label {
+      color: darken($main-color, 5%);
+    }
+
+    &:checked {
+      ~ label {
+        &:hover {
+          color: darken($main-color, 3%);
+        }
+
+        .can-toggle__switch {
+          background-color: lighten($main-color, 5%);
+          &:after {
+            color: darken($main-color, 5%);
+          }
+        }
+      }
+
+      &:focus, &:hover {
+        ~ label {
+          .can-toggle__switch {
+            background-color: $main-color;
+            &:after {
+              color: darken($main-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    .can-toggle__switch {
+      transition: background-color 0.3s $toggle-transition;
+      background: lighten($main-color, 5%);
+      &:before {
+        color: $dark-color;
+      }
+
+      &:after {
+        -webkit-transition: 0.3s $toggle-transition;
+        transition: transform 0.3s $toggle-transition;
+        color: $main-color;
+      }
+    }
+  }
+}
+@mixin can-toggle-appearance
+(
+  $toggle-width: 220px,
+  $toggle-height: 44px,
+  $toggle-border-radius: 60px,
+  $toggle-offset: 0px,
+  $toggle-label-fs: 12px,
+  $toggle-shadow: 0px 6px 12px rgba(82, 67, 194, 0.16),
+){
+  $toggle-switch-width: $toggle-width/2;
+
+  input[type="checkbox"] {
+    &:focus ~ label, &:hover ~ label {
+      .can-toggle__switch {
+        &:after {
+          box-shadow: $toggle-shadow;
+        }
+      }
+    }
+
+    &:checked {
+      ~ label {
+        .can-toggle__switch {
+          &:after {
+            transform: translate3d($toggle-width - ($toggle-switch-width + $toggle-offset),0,0);
+          }
+        }
+      }
+      &:focus, &:hover {
+        ~ label {
+          .can-toggle__switch {
+            &:after {
+            box-shadow: $toggle-shadow;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    font-size: $toggle-label-fs;
+
+    .can-toggle__switch {
+      height: $toggle-height;
+      flex: 0 0 $toggle-width;
+      border-radius: $toggle-border-radius;
+
+      &:before {
+        left: $toggle-width/2;
+        font-size: $toggle-label-fs;
+        line-height: $toggle-height;
+        width: $toggle-width/2;
+      }
+
+      &:after {
+        top: $toggle-offset; ;
+        border-radius: $toggle-border-radius/2;
+        width: $toggle-switch-width - $toggle-offset;
+        line-height: $toggle-height - ($toggle-offset*2);
+        font-size: $toggle-label-fs;
+      }
+
+      &:hover {
+        &:after { box-shadow: $toggle-shadow; }
+      }
+    }
+  }
+}

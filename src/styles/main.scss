@@ -1,7 +1,14 @@
 @import "utils";
 @import "fonts";
 @import "typography";
-
-body {
-  background: $c-gray;
-}
+@import "./blocks/checkbox.scss";
+@import "./resets.scss";
+@import "./blocks/grid.scss";
+@import "./blocks/checkmark.scss";
+@import "./blocks/body.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/header.scss";
+@import "./blocks/about.scss";
+@import "./blocks/plans.scss";
+@import "./blocks/plan.scss";
+@import "./blocks/button.scss";

@@ -1,0 +1,11 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(#F5F5FA, #F2DAD5, #A0ABD6);
+  padding: 16px;
+  height: auto;
+  min-width: 320px;
+
+  @include onDesktop {
+    padding: 32px 50px 69px 53px;
+  }
+}

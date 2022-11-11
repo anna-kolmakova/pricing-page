@@ -1,0 +1,113 @@
+.plan {
+  box-sizing: border-box;
+  margin: 32px auto 8px;
+  padding: 0 28px;
+  border-radius: 26px;
+  @include flexSettings;
+
+  &--second {
+    @include onDesktop {
+      padding: 0 50px 0 0;
+    }
+  }
+
+  @include onDesktop {
+    width: 292px;
+    margin: 40px 0 20px;
+    justify-content: flex-start;
+  }
+
+  @include onTablet {
+    max-width: 272px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__price-total {
+    color: #231D4F;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+
+    &--popular {
+      color: $c-white;
+    }
+
+  }
+  &__price-text {
+    color: $info-text;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+
+    &--popular {
+      color: $c-white;
+    }
+
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 42px;
+    color: $main-dark;
+    margin-top: 20px;
+
+    &--popular {
+      color: $c-white;
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: $info-text;
+    margin-top: 6px;
+
+    &--popular {
+      color: $c-white;
+    }
+  }
+
+  &__details {
+    margin-top: 15px;
+  }
+
+  &__popular {
+    width: 272px;
+    margin: 20px auto 8px;
+    background-color: $main-dark;
+    color: $c-white;
+    box-shadow: 0px 42px 34px rgba(82, 67, 194, 0.295755);
+    padding: 0 20px;
+
+    @include onDesktop {
+      width: 292px;
+      transform: translateY(-55px) translateX(-25px);
+      height: 483px;
+      padding: 0 30px;
+      margin-bottom: 20px;
+    }
+
+    &--tag {
+      @include flexSettings;
+      align-items: center;
+      align-self: flex-end;
+      width: 121px;
+      height: 27px;
+      border-radius: 13.5px;
+      background-color: #403879;
+      color: $main-light;
+      font-weight: 800;
+      font-size: 10px;
+      line-height: 15px;
+      letter-spacing: 0.83px;
+      margin: 20px 0 25px;
+      text-transform: uppercase;
+    }
+  }
+}
