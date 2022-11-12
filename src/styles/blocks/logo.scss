@@ -1,8 +1,6 @@
 .logo {
-
   &__container {
-  display: flex;
-  align-items: center;
+    @include flex-AlignItems-center;
   }
 
   &__picture {

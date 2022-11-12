@@ -1,13 +1,11 @@
 .header {
   &__container {
+    @include flex-AlignItems-center;
     margin: 16px 8px 77px 11px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
 
     @include onDesktop {
-      margin: 0 0 77px 0;
+      margin: 0 0 77px;
     }
-
   }
 }
