@@ -4,7 +4,7 @@
 
   @include onDesktop {
     justify-content: flex-start;
-    align-items:flex-start;
+    align-items: flex-start;
     width: 937px;
     @include autoMargin;
   }
@@ -17,7 +17,6 @@
       height: 54px;
       width: 937px;
       flex-direction: row;
-      align-items: center;
       justify-content: space-between;
       margin-bottom: 90px;
     }
@@ -41,6 +40,7 @@
     line-height: 27px;
     color: $info-text;
     margin-bottom: 37px;
+    max-width: 288px;
 
     @include onDesktop {
       max-width: 584px;
@@ -50,18 +50,5 @@
       max-width: 584px;
       text-align: center;
     }
-
-  }
-
-  &__check {
-    @include flexSettings;
-    align-items: center;
-    height: 44px;
-    margin-bottom: 32px;
-  }
-
-  &__check-container {
-    width: 220px;
-    margin-bottom: 32px;
   }
 }

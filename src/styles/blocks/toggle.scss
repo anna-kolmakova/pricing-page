@@ -4,10 +4,24 @@
   @include can-toggle-appearance;
   position: relative;
 
+  &__check {
+    @include flexSettings;
+    align-items: center;
+    height: 44px;
+    margin-bottom: 32px;
+  }
+
+  &__container {
+    width: 220px;
+    margin-bottom: 32px;
+  }
+
+
   *,
   *:before,
   *:after {
     box-sizing: border-box;
+    cursor: pointer;
   }
 
   label {
@@ -23,22 +37,20 @@
 
       &:before {
         content: attr(data-checked);
-        position: absolute;
-        text-transform: uppercase;
-        letter-spacing: 0.83px;
-        text-align: center;
+        @include can-toggle-switch-styling;
       }
 
       &:after {
         content: attr(data-unchecked);
-        position: absolute;
+        @include can-toggle-switch-styling;
         z-index: 5;
-        text-transform: uppercase;
-        letter-spacing: 0.83px;
-        text-align: center;
         background: $main-light;
         transform: translate3d(0,0,0);
         box-shadow: 0 6px 12px rgba(82, 67, 194, 0.16);
+      }
+
+      &:hover::after{
+          @include button-hover;
       }
     }
   }

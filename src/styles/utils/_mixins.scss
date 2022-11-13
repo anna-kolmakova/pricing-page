@@ -20,9 +20,36 @@
 }
 
 @mixin onTablet {
-  @media (min-width: 400px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     @content;
   }
+}
+
+@mixin largeScreen {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin can-toggle-switch-styling {
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 0.83px;
+  text-align: center;
+}
+
+@mixin button-link-upper-noStyling {
+  text-decoration: none;
+  color: $c-white;
+}
+
+@mixin button-hover {
+  background: $main-light-hover;
+  transition: 0.5s;
+}
+
+@mixin plan-padding-mobile-tablet {
+  padding: 0 28px;
 }
 
 @mixin can-toggle-branding(
