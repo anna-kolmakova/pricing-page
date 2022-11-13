@@ -16,7 +16,6 @@
     margin-bottom: 32px;
   }
 
-
   *,
   *:before,
   *:after {
@@ -24,7 +23,7 @@
     cursor: pointer;
   }
 
-  label {
+  &__label {
     user-select: none;
     @include flex-AlignItems-center;
 
@@ -49,13 +48,13 @@
         box-shadow: 0 6px 12px rgba(82, 67, 194, 0.16);
       }
 
-      &:hover::after{
-          @include button-hover;
+      &:hover::after {
+        @include button-hover;
       }
     }
   }
 
-  input[type="checkbox"] {
+  &__input {
     opacity: 0;
 
     &[disabled] ~ label {

@@ -1,48 +1,53 @@
-ul.checkmark li {
-  list-style-type: none;
-  font-size: 16px;
-  margin-bottom: 11px;
-  padding: 0.25em 0 0 2.25em;
-  position: relative;
-}
+.checkmark {
+  margin-top: 15px;
 
-ul.checkmark li:before {
-  content: " ";
-  display: block;
-  border: solid 0.8em rgba(82, 67, 194, 0.15);
-  border-radius: 0.8em;
-  height: 0;
-  width: 0;
-  position: absolute;
-  left: 0;
-  top: 40%;
-  margin-top: -0.5em;
+  &__point {
+    list-style-type: none;
+    font-size: 16px;
+    margin-bottom: 11px;
+    padding: 0.25em 0 0 2.25em;
+    position: relative;
 
-}
+    &:before {
+      content: " ";
+      display: block;
+      border: solid 0.8em rgba(82, 67, 194, 0.15);
+      border-radius: 0.8em;
+      height: 0;
+      width: 0;
+      position: absolute;
+      left: 0;
+      top: 40%;
+      margin-top: -0.5em;
+    }
 
-ul.checkmark--popular li:before {
-  border: solid 0.8em rgba(255, 255, 255, 0.15);
-}
+    &:after {
+      content: " ";
+      display: block;
+      width: 0.3em;
+      height: 0.6em;
+      border: solid $c-white;
+      border-width: 0 0.2em 0.2em 0;
+      left: 0.5em;
+      position: absolute;
+      top: 40%;
+      margin-top: -0.2em;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
 
-ul.checkmark li:after {
-  content: " ";
-  display: block;
-  width: 0.3em;
-  height: 0.6em;
-  border: solid $c-white;
-  border-width: 0 0.2em 0.2em 0;
-  left: 0.5em;
-  position: absolute;
-  top: 40%;
-  margin-top: -0.2em;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+    &--popular {
+      &:before {
+        border: solid 0.8em rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
 
-ul.checkmark--popular {
-  @include onDesktop {
-    margin-bottom: 85px;
+  &--popular {
+    @include onDesktop {
+      margin-bottom: 85px;
+    }
   }
 }
