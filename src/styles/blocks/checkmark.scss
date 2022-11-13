@@ -3,16 +3,17 @@
 
   &__point {
     list-style-type: none;
-    font-size: 16px;
-    margin-bottom: 11px;
-    padding: 0.25em 0 0 2.25em;
+    font-size: 15px;
+    margin-bottom: 9px;
+    padding: 0 0 0 2.1em;
     position: relative;
+    color: $info-text;
 
     &:before {
       content: " ";
       display: block;
-      border: solid 0.8em rgba(82, 67, 194, 0.15);
-      border-radius: 0.8em;
+      border: solid 0.75em rgba(82, 67, 194, 0.15);
+      border-radius: 0.75em;
       height: 0;
       width: 0;
       position: absolute;
@@ -24,11 +25,11 @@
     &:after {
       content: " ";
       display: block;
-      width: 0.3em;
-      height: 0.6em;
-      border: solid $c-white;
-      border-width: 0 0.2em 0.2em 0;
-      left: 0.5em;
+      width: 0.25em;
+      height: 0.5em;
+      border: solid $checkpoint-color;
+      border-width: 0 0.15em 0.15em 0;
+      left: 0.55em;
       position: absolute;
       top: 40%;
       margin-top: -0.2em;
@@ -39,8 +40,12 @@
     }
 
     &--popular {
+      color: $c-white;
       &:before {
-        border: solid 0.8em rgba(255, 255, 255, 0.15);
+        border: solid 0.75em rgba(255, 255, 255, 0.15);
+      }
+      &::after {
+        border-color: $c-white;
       }
     }
   }
